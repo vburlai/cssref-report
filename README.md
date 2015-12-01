@@ -53,6 +53,7 @@ Navigate to http://www.w3schools.com/cssref/ and run report.js in console to re-
 | [bottom](http://www.w3schools.com/cssref/pr_pos_bottom.asp): auto\|<i>length</i>\|initial\|inherit; | 2|
 | [clear](http://www.w3schools.com/cssref/pr_class_clear.asp): none\|left\|right\|both\|initial\|inherit; | 1|
 | [clip](http://www.w3schools.com/cssref/pr_pos_clip.asp): auto\|<i>shape</i>\|initial\|inherit; | 2|
+| [display](http://www.w3schools.com/cssref/pr_class_display.asp): <i>value</i>; | 1|
 | [float](http://www.w3schools.com/cssref/pr_class_float.asp): none\|left\|right\|initial\|inherit; | 1|
 | [height](http://www.w3schools.com/cssref/pr_dim_height.asp): auto\|<i>length</i>\|initial\|inherit; | 1|
 | [left](http://www.w3schools.com/cssref/pr_pos_left.asp): auto\|<i>length</i>\|initial\|inherit; | 2|
