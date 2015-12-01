@@ -8,8 +8,26 @@
  **/
 (function(window, $, console){
   var URL = 'http://www.w3schools.com/cssref/',
-      rx = /<h2>CSS Syntax<\/h2>\r\n<div.*?><div>\r\n[^:]+:(.*)<\/div><\/div>/,
+      rx = /<h2>CSS Syntax<\/h2>\r\n<div.*?><div>\r\n[^:]+: (.*)<\/div><\/div>/,
       NOT_DEPRECATED = { 'display': 1, '@font-face': 1 };
+      FORMATS = {
+        'background-position':
+            'left/right/center top/botom/center|xpos ypos|initial|inherit;',
+
+        'display':
+            'inline|block|flex|inline-block/flex/table|list-item|run-in| table'+
+            '|table-caption/cell/column/row|table-header/footer/row/column-group|none|initial|inherit;',
+
+        'list-style-type':
+            'disc|armenian|circle|cjk-ideographic|decimal|deciman-leading-zero'+
+            '|georgian|hebrew|hiragana|katakana|hiragana/katakana-iroha'+
+            '|lower-greek|lower/upper-alpha/latin/roman|none|square|initial|inherit;',
+
+        'cursor':
+            'alias|all-scroll|auto|cell|context-menu|col-resize|copy|crosshair|default'+
+            '|e/ew/n/ne/nesw/ns/nw/nwse/row/s/se/sw/w-resize|grab|grabbing|help|move|no-drop'+
+            '|none|not-allowed|pointer|progress|text|<i>URL</i>|vertical-text|wait|zoom-in/out|initial|inherit;'
+      },
       res = {},
       pending = 0;
 
@@ -29,7 +47,9 @@
     var m,
         cssver = el.parentNode.parentNode.children[2].innerText,
         prop = el.innerText,
-        href = el.href;
+        propText = prop.replace('-left', '-left/right/top/bottom'),
+        href = el.href,
+        format;
 
     if (prop.indexOf('-right') === -1 &&
         prop.indexOf('-top') === -1 &&
@@ -37,7 +57,8 @@
           if (NOT_DEPRECATED[prop] || data.indexOf('class="deprecated"') === -1){
             m = data.match(rx);
             if (m) {
-              res[prop] = '| ['+prop.replace('-left', '-left/right/top/bottom')+']('+href+'):'+m[1].replace(/\|/g, '\\|')+' | '+cssver+'|';
+              format = (FORMATS[prop] || m[1]).replace(/\|/g, ' \\| ');
+              res[prop] = '| ['+propText+']('+href+'): '+format+' | '+cssver+'|';
             }
           } else {
             console.log(href + ' is deprecated (has quite limited support)');
