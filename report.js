@@ -31,14 +31,18 @@
         prop = el.innerText,
         href = el.href;
 
-    if (NOT_DEPRECATED[prop] || data.indexOf('class="deprecated"') === -1){
-      m = data.match(rx);
-      if (m) {
-        res[prop] = '| ['+prop+']('+href+'):'+m[1].replace(/\|/g, '\\|')+' | '+cssver+'|';
-      }
-    } else {
-      console.log(href + ' is deprecated (has quite limited support)');
-    }
+    if (prop.indexOf('-right') === -1 &&
+        prop.indexOf('-top') === -1 &&
+        prop.indexOf('-bottom') === -1) {
+          if (NOT_DEPRECATED[prop] || data.indexOf('class="deprecated"') === -1){
+            m = data.match(rx);
+            if (m) {
+              res[prop] = '| ['+prop.replace('-left', '-left/right/top/bottom')+']('+href+'):'+m[1].replace(/\|/g, '\\|')+' | '+cssver+'|';
+            }
+          } else {
+            console.log(href + ' is deprecated (has quite limited support)');
+          }
+        }
 
     if (--pending == 0) {
       output();
