@@ -8,7 +8,7 @@
  **/
 (function(window, $, console){
   var URL = 'http://www.w3schools.com/cssref/',
-      rx = /<h2>CSS Syntax<\/h2>\r\n<div.*?><div>\r\n[^:]+: (.*)<\/div><\/div>/,
+      rx = /<h2>CSS Syntax<\/h2>\r\n<div.*?><div>\r\n[^:]+: ?(.*)<\/div><\/div>/,
       NOT_DEPRECATED = { 'display': 1, '@font-face': 1 };
       FORMATS = {
         'background-position':
