@@ -1,10 +1,10 @@
 # CSS 3 report
 
-Brief report for memorizing CSS 3 properties (built from W3C site).
+Brief report for memorizing CSS 3 properties (built from W3Schools site).
 
 Navigate to http://www.w3schools.com/cssref/ and run report.js in console to re-generate.
 
-Also check out [complete HTML 5 reference](http://www.w3schools.com/tags/default.asp) at W3C site.
+Also check out [complete HTML 5 reference](http://www.w3schools.com/tags/default.asp) at W3Schools site.
 
 # CSS 3 Properties supported by browsers (last updated Dec, 2015)
 
