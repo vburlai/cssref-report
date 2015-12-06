@@ -4,6 +4,8 @@ Brief report for memorizing CSS 3 properties (built from W3C site).
 
 Navigate to http://www.w3schools.com/cssref/ and run report.js in console to re-generate.
 
+Also check out [complete HTML 5 reference](http://www.w3schools.com/tags/default.asp) at W3C site.
+
 # CSS 3 Properties supported by browsers (last updated Dec, 2015)
 
 | Property | CSS |
